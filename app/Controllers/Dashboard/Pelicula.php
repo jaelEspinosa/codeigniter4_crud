@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Dashboard;
 
+use App\Controllers\BaseController;
 use App\Models\PeliculaModel;
 
 class Pelicula extends BaseController
@@ -16,14 +17,14 @@ class Pelicula extends BaseController
   
       
        $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas];
-       return view('pelicula/index', $data);
+       return view('dashboard/pelicula/index', $data);
     }
     
     public function new()
     {
       $pelicula = ['id'=>'','titulo'=> '', 'description'=>''];
 
-      echo view ('pelicula/new',['pelicula'=>$pelicula]);
+      echo view ('dashboard/pelicula/new',['pelicula'=>$pelicula]);
     }
 
     public function show($id)
@@ -32,7 +33,7 @@ class Pelicula extends BaseController
     
       $pelicula = $peliculaModel->find($id);
     
-      echo view('pelicula/show', ['pelicula' => $pelicula]);
+      echo view('dashboard/pelicula/show', ['pelicula' => $pelicula]);
     }
 
    public function create(){
@@ -43,7 +44,7 @@ class Pelicula extends BaseController
       'titulo' => $this->request->getPost('titulo'),
       'description' => $this->request->getPost('description')
     ]);
-   echo ('creado');
+   return redirect()->to('/dashboard/pelicula');
   }
 
 
@@ -51,7 +52,7 @@ class Pelicula extends BaseController
   {
     $peliculaModel = new PeliculaModel();
     
-    echo view ('pelicula/edit',['pelicula' => $peliculaModel->find($id)]);
+    echo view ('dashboard/pelicula/edit',['pelicula' => $peliculaModel->find($id)]);
   }
 
   public function update($id) 
@@ -62,7 +63,7 @@ class Pelicula extends BaseController
       'titulo' => $this->request->getPost('titulo'),
       'description' => $this->request->getPost('description')
     ]);
-   return ('actualizado');
+    return redirect()->to('/dashboard/pelicula');
   }
 
  public function delete($id) 
@@ -70,7 +71,7 @@ class Pelicula extends BaseController
   $peliculaModel = new PeliculaModel();
   $peliculaModel->delete($id);
 
-   return ('Eliminado');
+  return redirect()->to('/dashboard/pelicula');
  } 
 }
 

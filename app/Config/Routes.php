@@ -34,8 +34,20 @@ $routes->set404Override();
 
 //$routes->get('pelicula', 'PeliculaController::index');
 
-$routes->presenter('pelicula');
-$routes->presenter('categoria');
+$routes->group('dashboard', function($routes){
+    
+    $routes->presenter('pelicula', ['controller' => 'Dashboard\Pelicula']);
+    $routes->presenter('categoria', ['except' => 'show', 'controller' => 'Dashboard\categoria']); 
+    
+    // añadiendo en opciones except me muestra todas las rutas excepto show
+   // $routes->presenter('categoria', ['only' => 'show']); // aqui sería al contrario es decir me muestra solo show
+   
+   /* en ambos casos si quiero exceptuar mas de una o mostrar un grupo, seria poner un array como este:
+
+          $routes->presenter('categoria', ['only' => ['show', 'index']]);
+   */
+});
+
 
 /*
  * --------------------------------------------------------------------

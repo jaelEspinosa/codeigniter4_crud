@@ -8,31 +8,38 @@
     <title>Listado de Peliculas</title>
 </head>
 <body class="container">
-    <h1>Listado de categorias</h1>
+    <h1>Listado de peliculas</h1>
     <p><?php echo $nombreVariableVista ?></p>
   
-    <a class="btn btn-primary m-5" href="/categoria/new">Crear</a>
+    <a class="btn btn-primary m-5" href="/dashboard/pelicula/new">Crear</a>
     <table class="table table-striped-columns">
         <tr>
             <th>id</th>
             <th>titulo</th>
+            <th>description</th>
             <th>Opciones</th>
         </tr>
-        <?php foreach ($categorias as $key => $value) : ?>
+        <?php foreach ($peliculas as $key => $value) : ?>
             <tr>
                 <td><?= $value['id'] ?></td>
-                <td><?= $value['titulo'] ?></td>               
+                <td><?= $value['titulo'] ?></td>
+                <td><?= $value['description']?></td>
                 <td class="d-flex align-items-center justify-content-around">
-                <a class="btn btn-sm btn-success" href="/categoria/show/<?= $value['id']?>">Show</a> 
-                <a class="btn btn-sm btn-primary" href="/categoria/edit/<?= $value['id']?>">Edit</a>                   
+                <a class="btn btn-sm btn-success" href="/dashboard/pelicula/show/<?= $value['id']?>">Show</a> 
+                <a class="btn btn-sm btn-primary" href="/dashboard/pelicula/edit/<?= $value['id']?>">Edit</a>                   
             
-                 <form action="/categoria/delete/<?= $value['id']?>" method="post">
+                 <form action="/dashboard/pelicula/delete/<?= $value['id']?>" method="post">
                     <button  class="btn btn-sm btn-danger" type="submit">Eliminar</button>
                 </form>
              </td>
             </tr>
             <?php endforeach ?> 
         </table>
+        
+        <div>
+            <a class="btn bnt-sm btn-outline-primary" href="<?=base_url()?>dashboard/categoria">categorias</a>
+        </div>
+            
 
 </body>
 </html>

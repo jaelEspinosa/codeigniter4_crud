@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Dashboard;
 
+use App\Controllers\BaseController;
 use App\Models\CategoriaModel;
 
 class Categoria extends BaseController
@@ -16,14 +17,14 @@ class Categoria extends BaseController
   
       
        $data = ['nombreVariableVista'=>'Contenido', 'categorias' => $categorias];
-       return view('categoria/index', $data);
+       return view('dashboard/categoria/index', $data);
     }
     
     public function new()
     {
       $categoria = ['id'=>'','titulo'=> ''];
 
-      echo view ('categoria/new',['categoria'=>$categoria]);
+      echo view ('dashboard/categoria/new',['categoria'=>$categoria]);
     }
 
     public function show($id)
@@ -32,7 +33,7 @@ class Categoria extends BaseController
     
       $categoria = $categoriaModel->find($id);
     
-      echo view('categoria/show', ['categoria' => $categoria]);
+      echo view('dashboard/categoria/show', ['categoria' => $categoria]);
     }
 
    public function create(){
@@ -42,7 +43,7 @@ class Categoria extends BaseController
     $categoriaModel -> insert([
       'titulo' => $this->request->getPost('titulo')
     ]);
-   echo ('creado');
+    return redirect()->to('/dashboard/categoria');
   }
 
 
@@ -50,7 +51,7 @@ class Categoria extends BaseController
   {
     $categoriaModel = new CategoriaModel();
     
-    echo view ('categoria/edit',['categoria' => $categoriaModel->find($id)]);
+    echo view ('dashboard/categoria/edit',['categoria' => $categoriaModel->find($id)]);
   }
 
   public function update($id) 
@@ -60,7 +61,7 @@ class Categoria extends BaseController
     $categoriaModel -> update($id,[
       'titulo' => $this->request->getPost('titulo')
     ]);
-   return ('actualizado');
+    return redirect()->to('/dashboard/categoria');
   }
 
  public function delete($id) 
@@ -68,7 +69,7 @@ class Categoria extends BaseController
   $categoriaModel = new CategoriaModel();
   $categoriaModel->delete($id);
 
-   return ('Eliminado');
+  return redirect()->to('/dashboard/categoria');
  } 
 }
 
