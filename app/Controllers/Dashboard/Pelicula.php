@@ -44,7 +44,7 @@ class Pelicula extends BaseController
       'titulo' => $this->request->getPost('titulo'),
       'description' => $this->request->getPost('description')
     ]);
-   return redirect()->to('/dashboard/pelicula');
+   return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro creado correctamente');
   }
 
 
@@ -63,7 +63,7 @@ class Pelicula extends BaseController
       'titulo' => $this->request->getPost('titulo'),
       'description' => $this->request->getPost('description')
     ]);
-    return redirect()->to('/dashboard/pelicula');
+    return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro actualizado correctamente');
   }
 
  public function delete($id) 
@@ -71,6 +71,9 @@ class Pelicula extends BaseController
   $peliculaModel = new PeliculaModel();
   $peliculaModel->delete($id);
 
+  session()->setFlashdata('Mensaje', 'Registro eliminado correctamente'); // otra manera de mostrar el mensaje flash
+
+ // return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro eliminado correctamente');
   return redirect()->to('/dashboard/pelicula');
  } 
 }

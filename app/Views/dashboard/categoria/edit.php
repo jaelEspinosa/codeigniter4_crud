@@ -7,7 +7,9 @@
     <title>Actualizar categoria</title>
 </head>
 <body>
+  
     <div class="container">
+    <?= view('partials/_session') ?>
    <h1 class="text-center">Actualizar Categoria</h1>
 
     <form  class="row border mt-5 m-2 p-5 shadow rounded" action="/dashboard/categoria/update/<?= $categoria['id']?>" method="post">
