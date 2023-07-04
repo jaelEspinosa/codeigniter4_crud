@@ -4,12 +4,16 @@
         
     <div class="form-group col-md-6">
         <label for="titulo">Título  </label>
-            <input class="form-control" type="text" placeholder="titulo" id="titulo" name="titulo" value="<?= $pelicula['titulo']?> ">
+            <input class="form-control <?= session('validation') && session('validation')->hasError('titulo') ? 'is-invalid' : ''; ?>" 
+                    type="text" placeholder="titulo" id="titulo" name="titulo" value="<?=old('titulo',$pelicula['titulo'])?> ">
       
     </div>
     <div class="form-group col-md-6">
         <label for="description">Descripción </label>
-            <textarea class="form-control"  placeholder="Descripción" id="description" name="description"><?= $pelicula['description']?></textarea>
+            <textarea class="form-control <?= session('validation') && session('validation')->hasError('description') ? 'is-invalid' : '';?>"  
+            placeholder="Descripción" 
+            id="description" 
+            name="description"><?=old('description',$pelicula['description'])?></textarea>
        
     </div>
     

@@ -36,16 +36,30 @@ class Pelicula extends BaseController
       echo view('dashboard/pelicula/show', ['pelicula' => $pelicula]);
     }
 
+    
+
    public function create(){
 
     $peliculaModel = new PeliculaModel();
+    
+    if ($this->validate('peliculas')){
+      
+      $peliculaModel -> insert([
+        'titulo' => $this->request->getPost('titulo'),
+        'description' => $this->request->getPost('description')
+      ]);
 
-    $peliculaModel -> insert([
-      'titulo' => $this->request->getPost('titulo'),
-      'description' => $this->request->getPost('description')
-    ]);
+    }else{
+      session()->setFlashdata([
+        'validation' => $this->validator
+      ]);
+      return redirect()->back()->withInput();
+
+    }
    return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro creado correctamente');
   }
+
+
 
 
   public function edit($id) 
@@ -55,16 +69,30 @@ class Pelicula extends BaseController
     echo view ('dashboard/pelicula/edit',['pelicula' => $peliculaModel->find($id)]);
   }
 
+
+
+
   public function update($id) 
   {
     $peliculaModel = new PeliculaModel();
 
-    $peliculaModel -> update($id,[
-      'titulo' => $this->request->getPost('titulo'),
-      'description' => $this->request->getPost('description')
-    ]);
+    if ($this->validate('peliculas')){
+      $peliculaModel -> update($id,[
+        'titulo' => $this->request->getPost('titulo'),
+        'description' => $this->request->getPost('description')
+      ]);
+    }else{
+      session()->setFlashdata([
+        'validation' => $this->validator
+      ]);
+      return redirect()->back()->withInput();
+    }
+
+
     return redirect()->to('/dashboard/pelicula')->with('Mensaje','Registro actualizado correctamente');
   }
+
+
 
  public function delete($id) 
  {

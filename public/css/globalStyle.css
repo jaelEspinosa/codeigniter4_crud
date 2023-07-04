@@ -43,4 +43,6 @@
     }
 }
 
-
+.validator div ul li{
+    color:red;
+}
