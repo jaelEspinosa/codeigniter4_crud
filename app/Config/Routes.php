@@ -48,6 +48,14 @@ $routes->group('dashboard', function($routes){
    */
 });
 
+$routes->group('api', ['namespace' => 'App\Controllers\Api'],function($routes){
+
+$routes->resource('pelicula');
+$routes->resource('categoria');
+
+
+});
+
 
 /*
  * --------------------------------------------------------------------
