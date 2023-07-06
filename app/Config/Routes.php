@@ -56,6 +56,13 @@ $routes->resource('categoria');
 
 });
 
+$routes->group('auth', ['namespace' => 'App\Controllers\Api'],function($routes){
+
+   $routes->post('login', 'User::login');
+   $routes->post('register', 'User::register');
+    
+    
+    });
 
 /*
  * --------------------------------------------------------------------
