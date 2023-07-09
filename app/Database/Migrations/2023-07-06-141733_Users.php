@@ -17,15 +17,23 @@ class Users extends Migration
             ],
             'username'=>[
                 'type' => 'VARCHAR',
-                'constraint' =>255               
+                'constraint' =>255,
+                'unique' => TRUE               
             ],
             'email'=>[
                 'type' => 'VARCHAR',
-                'constraint' =>255                
+                'constraint' =>255,
+                'unique' => TRUE               
+
             ],
             'password'=>[
                 'type' => 'VARCHAR',
-                'constraint' =>60                
+                'constraint' =>255                
+            ],
+            'type'=>[
+                'type' => 'ENUM',
+                'constraint' =>['admin','user'],
+                'default' => 'user'                
             ],
 
         ]);

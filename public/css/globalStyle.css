@@ -43,6 +43,10 @@
     }
 }
 
-.validator div ul li{
+.validator div ul li {
     color:red;
+}
+
+.validator p{
+    color:red
 }

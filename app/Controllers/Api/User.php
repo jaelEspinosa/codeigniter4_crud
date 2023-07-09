@@ -32,12 +32,12 @@ class User extends ResourceController {
   
         //verificamos que existe y el password
 
-        if($user && password_verify($password, $user['password'])){
+        if($user && $userDb->passVerify($password, $user['password'])){
             
           //  session()->set('user_id', $user['id']);
            // session()->set('username', $user['username']);
 
-            return $this->respond(['msg'   => 'Inicio de sesión exitoso',
+            return $this->respond(['msg'   => 'Inicio de sesión correcto.',
                                    'user'  => $user['username'],
                                    'email' => $user['email'] 
                                 ], 200);
@@ -62,10 +62,12 @@ class User extends ResourceController {
          }
 
          $userDb = new UserModel();
+
          $userDb->groupStart();
          $userDb->where('email',$email);
          $userDb->orWhere('username', $userName);
          $userDb->groupEnd();
+         
          $count = $userDb->countAllResults();
 
         if($this->validate('users')){
@@ -74,13 +76,12 @@ class User extends ResourceController {
             return $this->respond(['msg'=>'Este email y/o usuario ya está en registrado.'], 400);
         } 
 
-        
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
+       
+       
            $newUser = $this->model->insert([
               'username' => $userName,
               'email'    => $email,
-              'password' => $passwordHash
+              'password' => $userDb->passwordHash($password)
            ]);
         }else{
             return $this->respond($this->validator->getErrors(), 400);

@@ -9,15 +9,22 @@ class Pelicula extends BaseController
 
 {
 
+
+
+
   public function index()
   {
-
+    $session = session();
+    $user = $session->get('user');
     $peliculaModel = new PeliculaModel();
     $peliculas = $peliculaModel ->findAll();
   
       
-       $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas];
+       $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas, 'user' => $user];
+
+       
        return view('dashboard/pelicula/index', $data);
+       
     }
     
     public function new()

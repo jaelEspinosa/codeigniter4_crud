@@ -14,6 +14,6 @@
         <?php endif ?>
     </form>
 </div>
-<?= $this->endSection('Layouts/dashboard') ?>
+<?= $this->endSection() ?>
 
 

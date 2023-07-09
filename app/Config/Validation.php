@@ -55,6 +55,7 @@ class Validation extends BaseConfig
     public $users = [
         'username' => 'required|min_length[3]|max_length[255]',
         'email' => 'required|valid_email',
-        'password' => 'required|min_length[3]'
+        'password' => 'required|min_length[3]',
+        'password2' => 'matches[password]'
     ];
 }

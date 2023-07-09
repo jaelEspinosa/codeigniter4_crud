@@ -18,4 +18,4 @@
 </div>
 
 
-<?= $this->endSection('Layouts/dashboard') ?>
+<?= $this->endSection() ?>

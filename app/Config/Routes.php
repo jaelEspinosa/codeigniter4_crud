@@ -62,7 +62,14 @@ $routes->group('auth', ['namespace' => 'App\Controllers\Api'],function($routes){
    $routes->post('register', 'User::register');
     
     
-    });
+});
+
+$routes->get('login', '\App\Controllers\Web\User::login',['as'=>'usuario.login']);
+$routes->get('register', '\App\Controllers\Web\User::register',['as'=>'usuario.register']);
+$routes->get('logout', '\App\Controllers\Web\User::logout',['as'=>'usuario.logout']);
+
+$routes->post('login_post', '\App\Controllers\Web\User::login_post',['as'=>'usuario.login_post']);
+$routes->post('register_post', '\App\Controllers\Web\User::register_post',['as'=>'usuario.register_post']);
 
 /*
  * --------------------------------------------------------------------

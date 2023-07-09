@@ -5,6 +5,10 @@
 
 <div class="container">
     <h2>Listado de peliculas</h2>
+     <?php if($user):?>
+    <h2>User: <?= $user['username'] ?></h2>
+    <?php endif ?>
+    
     <p><?php echo $nombreVariableVista ?></p>
 
     <a class="btn btn-primary m-5" href="/dashboard/pelicula/new">Crear</a>
@@ -38,7 +42,7 @@
 </div>
 
 
-<?= $this->endSection('Layouts/dashboard') ?>
+<?= $this->endSection() ?>
 
 
 
