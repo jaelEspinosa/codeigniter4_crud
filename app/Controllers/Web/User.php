@@ -42,9 +42,12 @@ class User extends BaseController
        
     //Comprobamos el password.
       if($userDb->passVerify($password, $user['password'])){
-         $session = session();
+       //  $session = session();
          unset($user['password']);
-         $session->set($user);
+        // $session->set($user);
+        session()->set('user_id', $user['id']);
+        session()->set('username', $user['username']);
+        session()->set('type', $user['type']);
 
          // login ok redireccionamos al dashboard
          return redirect()->to('/dashboard/categoria')->with('Mensaje','Bienvenid@, '.$user['username'])->with('user', $user['username']);
@@ -91,9 +94,11 @@ class User extends BaseController
       ->orWhere('email', $email)
       ->first();
 
-      $session = session();
+      //$session = session();
       unset($user['password']);
-      $session->set($user);
+      session()->set('user_id', $user['id']);
+      session()->set('username', $user['username']);
+      session()->set('type', $user['type']);
       return redirect()->to('/dashboard/categoria')->with('Mensaje','Bienvenid@, '.$user['username']); 
     }
       session()->setFlashdata([

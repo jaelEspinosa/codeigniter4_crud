@@ -12,6 +12,12 @@
     
     <div class="mx-5 mt-5 d-flex align-items-center justify-content-around">
         <h1>Módulo de Admin</h1>
+
+
+
+       <h5 class="d-flex align-items-start gap-1 text-primary"><i class="fa fa-user" aria-hidden="true"></i>  
+        <?= session('username')?></h5>
+
         <a class="btn btn-sm btn-outline btn-primary" href="<?= base_url().'logout'?>">
             <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
         </a>

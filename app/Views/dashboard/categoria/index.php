@@ -6,6 +6,8 @@
   <h2 >Listado de categorias</h2>
   <p><?php echo $nombreVariableVista ?></p>
 
+  
+
   <a class="btn btn-primary m-5" href="/dashboard/categoria/new">Crear</a>
   <table class="table table-striped-columns">
       <tr>

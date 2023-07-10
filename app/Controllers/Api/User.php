@@ -34,8 +34,9 @@ class User extends ResourceController {
 
         if($user && $userDb->passVerify($password, $user['password'])){
             
-          //  session()->set('user_id', $user['id']);
-           // session()->set('username', $user['username']);
+            session()->set('user_id', $user['id']);
+            session()->set('username', $user['username']);
+            session()->set('type', $user['type']);
 
             return $this->respond(['msg'   => 'Inicio de sesión correcto.',
                                    'user'  => $user['username'],
