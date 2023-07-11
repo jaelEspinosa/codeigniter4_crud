@@ -2,19 +2,32 @@
 
 
         
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
         <label for="titulo">Título  </label>
             <input class="form-control <?= session('validation') && session('validation')->hasError('titulo') ? 'is-invalid' : ''; ?>" 
-                    type="text" placeholder="titulo" id="titulo" name="titulo" value="<?=old('titulo',$pelicula['titulo'])?> ">
-      
+                    type="text" placeholder="titulo" id="titulo" name="titulo" value="<?=old('titulo',$pelicula['titulo'])?> ">      
     </div>
-    <div class="form-group col-md-6">
+
+    <div class="form-group col-md-4">
+        <label for="categoria_id">Categoria</label>
+        <select class="form-control <?= session('validation') && session('validation')->hasError('categoria_id') ? 'is-invalid' : ''; ?>"
+                name="categoria_id" id="categoria_id" 
+                class="form-control" 
+                value="<?=old('categoria_id',$pelicula['categoria_id'])?> ">
+             <option value="">selccione una categoria</option>
+         <?php foreach ($categorias as $c): ?>
+            <option value="<?=$c['id']?>" <?php echo ($c['id'] == $pelicula['categoria_id']) ? 'selected' : ''?> ><?= $c['titulo']?> </option>
+            
+        <?php endforeach ?>  
+        </select>
+    </div>
+
+    <div class="form-group col-md-4">
         <label for="description">Descripción </label>
             <textarea class="form-control <?= session('validation') && session('validation')->hasError('description') ? 'is-invalid' : '';?>"  
             placeholder="Descripción" 
             id="description" 
-            name="description"><?=old('description',$pelicula['description'])?></textarea>
-       
+            name="description"><?=old('description',$pelicula['description'])?></textarea>       
     </div>
     
     <div class="col-md-6 row mx-1">

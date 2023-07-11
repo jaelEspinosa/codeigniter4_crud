@@ -49,7 +49,9 @@ class Validation extends BaseConfig
     
     public $peliculas = [
         'titulo' => 'required|min_length[3]|max_length[255]',
-        'description' => 'required|min_length[3]|max_length[2000]'
+        'description' => 'required|min_length[3]|max_length[2000]',
+        'categoria_id' => 'required',
+
     ];
 
     public $users = [

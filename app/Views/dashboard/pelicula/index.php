@@ -16,9 +16,10 @@
 
         <table class="table table-striped-columns">
             <tr>
-                <th>id</th>
-                <th>titulo</th>
-                <th>description</th>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripción</th>
+                <th>Categoria</th>
                 <th>Opciones</th>
             </tr>
             <?php foreach ($peliculas as $key => $value) : ?>
@@ -26,6 +27,14 @@
                     <td><?= $value['id'] ?></td>
                     <td><?= $value['titulo'] ?></td>
                     <td><?= $value['description'] ?></td>
+                    <td><?php 
+                        foreach ($categorias as $key => $c) {
+                           if($c['id']==$value['categoria_id']){
+                            echo ($c['titulo']);
+                           }
+                        }
+                    
+                    ?></td>
                     <td class="d-flex align-items-center justify-content-around">
                         <a class="btn btn-sm btn-success" href="/dashboard/pelicula/show/<?= $value['id'] ?>">Show</a>
                         <a class="btn btn-sm btn-primary" href="/dashboard/pelicula/edit/<?= $value['id'] ?>">Edit</a>
