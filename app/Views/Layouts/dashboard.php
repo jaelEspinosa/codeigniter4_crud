@@ -28,7 +28,12 @@
     <div class="tostada">
         <?= view('partials/_session') ?>
     </div>
-    <?php endif ?>
+ <?php endif ?>
+ <?php if(session('mensaje')): ?>
+    <div class="tostada-ok">
+        <?= view('partials/_session') ?>
+    </div>
+ <?php endif ?>
 
   
 

@@ -35,9 +35,15 @@ $routes->set404Override();
 //$routes->get('pelicula', 'PeliculaController::index');
 
 $routes->group('dashboard', function($routes){
+
+    $routes->get('pelicula/etiqueta/(:num)','Dashboard\Pelicula::etiquetas/$1',['as' => 'pelicula.etiquetas']); 
+    $routes->post('pelicula/etiqueta/(:num)','Dashboard\Pelicula::etiquetas_post/$1',['as' => 'pelicula.etiquetas']); 
+    $routes->post('pelicula/(:num)/etiqueta/(:num)/delete','Dashboard\Pelicula::etiqueta_delete/$1/$2',['as' => 'pelicula.etiqueta_delete']); 
     
     $routes->presenter('pelicula', ['controller' => 'Dashboard\Pelicula']);
+    $routes->presenter('etiqueta', ['controller' => 'Dashboard\Etiqueta']);
     $routes->presenter('categoria', ['except' => 'show', 'controller' => 'Dashboard\categoria']); 
+
     
     // añadiendo en opciones except me muestra todas las rutas excepto show
    // $routes->presenter('categoria', ['only' => 'show']); // aqui sería al contrario es decir me muestra solo show

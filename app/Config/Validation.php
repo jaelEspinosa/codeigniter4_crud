@@ -53,6 +53,11 @@ class Validation extends BaseConfig
         'categoria_id' => 'required',
 
     ];
+    public $etiquetas = [
+        'titulo' => 'required|min_length[3]|max_length[255]',
+        'categoria_id' => 'required',
+
+    ];
 
     public $users = [
         'username' => 'required|min_length[3]|max_length[255]',

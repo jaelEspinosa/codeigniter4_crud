@@ -36,6 +36,7 @@
     </div>
       <div>
           <a class="btn bnt-sm btn-outline-primary mt-4" href="<?=base_url()?>dashboard/pelicula">peliculas</a>
+          <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/etiqueta">Etiquetas</a>
       </div>
   </div>   
    

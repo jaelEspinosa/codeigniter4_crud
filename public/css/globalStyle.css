@@ -14,6 +14,21 @@
     animation: tostadaMove 4s ease-in-out;
 
 }
+.tostada-ok{
+    visibility: hidden;
+    padding: 10px;
+    position:absolute;
+    
+    top:50px;
+    right:-100px;
+    color: green;
+    background-color:rgb(174, 252, 207);  
+    border: 1px solid rgb(28, 238, 123);
+    
+    border-radius: 10px;
+    animation: tostadaMove 4s ease-in-out;
+
+}
 @keyframes tostadaMove {
     0%{ 
        

@@ -15,7 +15,7 @@
     <div class="col-md-6 row mx-1 mt-2">
     <button class="btn btn-primary col-4"><?= $oc ?></button>
         <div class="col-4"></div>
-        <a href="<?php echo base_url().'dashboard/pelicula'?>" class="btn btn-primary col-4">volver</a>
+        <a href="<?php echo base_url().'dashboard/categoria'?>" class="btn btn-primary col-4">volver</a>
     </div>
 
     
