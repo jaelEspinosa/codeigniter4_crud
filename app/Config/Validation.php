@@ -57,7 +57,7 @@ class Validation extends BaseConfig
         'titulo' => 'required|min_length[3]|max_length[255]',
         'categoria_id' => 'required',
 
-    ];
+    ];  
 
     public $users = [
         'username' => 'required|min_length[3]|max_length[255]',
@@ -65,4 +65,12 @@ class Validation extends BaseConfig
         'password' => 'required|min_length[3]',
         'password2' => 'matches[password]'
     ];
+
+    public $image = [
+          'uploaded[imagen]',
+          'mime_in[imagen,image/jpeg,image/gif,image/png]',
+          'max_size[imagen, 4096]'
+    ];
+
+    
 }

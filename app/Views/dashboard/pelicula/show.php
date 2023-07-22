@@ -16,14 +16,34 @@
     <p><?= $pelicula['description'] ?></p>
     <h3>Imágenes:</h3>
     <br>
-    <ul class="tscroll shadow border rounded">
+    <div class="tscroll shadow border rounded row">
         <?php foreach ($images as $i):?>
-         <li>Imagen:     <?= $i['imagen'].' '?>,
-             Extension:  <?= $i['extension'].' '?>
-             Data:  <?= $i['data']?>        
-        </li>  
+         
+            <div class="col-4 d-flex align-items-center justify-content-center p-3">
+                
+                <div class="card text-center" style="width: 12rem">
+                    
+                    <img class="card-img-top" src="/uploads/peliculas/<?= $i['imagen']?>" alt="<?=$i['extension']?>">  
+                    <p class="card-title"><?= $i['extension'].' '?></p> 
+                    <p class="card-text"> <?= $i['data']?></p> 
+                   
+                        
+                        
+                        <form class="p-2" action="<?= route_to('pelicula.imagen_delete', $i['id'] )?>" method="post">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Borrar</button>
+                            <a href="<?= route_to('pelicula.imagen_download', $i['id'])?>" class="btn btn-sm btn-outline-success">Download</a>
+                        </form>
+                        
+                        
+                    
+       
+                </div>   
+            </div>
+        
+        
+         
         <?php endforeach ?>    
-    </ul>
+    </div>
     <h3>Etiquetas: </h3>
     <br>
        <div class="d-flex align-items-center justify-start gap-3">
