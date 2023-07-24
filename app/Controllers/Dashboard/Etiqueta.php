@@ -14,11 +14,11 @@ class Etiqueta extends BaseController
     $session = session();
     $user = $session->get('user');
     $etiquetaModel = new EtiquetaModel();
-    $etiquetas = $etiquetaModel ->findAll();
+    $etiquetas = $etiquetaModel ->paginate(5);
     $categoriaModel = new CategoriaModel();
     $categorias = $categoriaModel->find();
 
-       $data = ['nombreVariableVista'=>'Contenido', 'etiquetas' => $etiquetas, 'user' => $user, 'categorias'=>$categorias];
+       $data = ['nombreVariableVista'=>'Contenido', 'etiquetas' => $etiquetas, 'user' => $user, 'categorias'=>$categorias, 'pager'=>$etiquetaModel->pager];
        
        return view('dashboard/etiqueta/index', $data);
        

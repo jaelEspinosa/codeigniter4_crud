@@ -70,3 +70,34 @@
     max-height: calc(100vh - 480px);
     overflow-y: scroll;
 }
+
+.active a{
+    color:rgb(45, 47, 48)!important;
+    font-weight:bold;
+}
+
+.pagination{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    
+    padding: 2px;
+    font-size: 24px;
+}
+
+.pagination li a{
+
+    color: rgb(91, 94, 95);
+    text-decoration: none;
+
+}
+
+.pagination li a span{
+    
+    color: rgb(91, 94, 95);
+    text-decoration: none;
+    font-size: 18px!important;
+
+}

@@ -53,6 +53,10 @@
         <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/categoria">categorias</a>
         <a class="btn bnt-sm btn-outline-primary mt-4" href="<?=base_url()?>dashboard/pelicula">peliculas</a>
     </div>
+    <div class="border shadow rounded mt-5 p-2">
+         <h5>Pag.</h5>
+         <?= $pager->links() ?>
+    </div>
 </div>
 
 

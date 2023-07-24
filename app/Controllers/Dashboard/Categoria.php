@@ -13,10 +13,10 @@ class Categoria extends BaseController
   {
 
     $categoriaModel = new CategoriaModel();
-    $categorias = $categoriaModel ->findAll();
+    $categorias = $categoriaModel ->paginate(5);
   
       
-       $data = ['nombreVariableVista'=>'Contenido', 'categorias' => $categorias];
+       $data = ['nombreVariableVista'=>'Contenido', 'categorias' => $categorias, 'pager'=>$categoriaModel->pager];
        return view('dashboard/categoria/index', $data);
     }
     

@@ -25,7 +25,11 @@
                     
                     <img class="card-img-top" src="/uploads/peliculas/<?= $i['imagen']?>" alt="<?=$i['extension']?>">  
                     <p class="card-title"><?= $i['extension'].' '?></p> 
-                    <p class="card-text"> <?= $i['data']?></p> 
+                   
+                
+               
+                
+                </p> 
                    
                         
                         

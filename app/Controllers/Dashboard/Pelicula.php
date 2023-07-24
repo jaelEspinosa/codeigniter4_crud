@@ -19,19 +19,13 @@ class Pelicula extends BaseController
     $session = session();
     $user = $session->get('user');
     $peliculaModel = new PeliculaModel();
-    $peliculas = $peliculaModel ->findAll();
+    $peliculas = $peliculaModel ->paginate(5);
     $categoriaModel = new CategoriaModel();
     $categorias = $categoriaModel->find();
 
-   /*  $this->generar_Imagen();
-    $this->generar_Imagen();
-    $this->generar_Imagen();
-    $this->generar_Imagen(); */
 
-    
-  
       
-       $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas, 'user' => $user, 'categorias'=>$categorias];
+       $data = ['nombreVariableVista'=>'Contenido', 'peliculas' => $peliculas, 'user' => $user, 'categorias'=>$categorias, 'pager'=>$peliculaModel->pager];
 
        
        return view('dashboard/pelicula/index', $data);
@@ -179,6 +173,7 @@ class Pelicula extends BaseController
  
  private function asignar_imagen($peliculaId)
  {
+   helper('filesystem');
    if($imageFile = $this->request->getFile('imagen')){
 
     var_dump($imageFile);
@@ -197,7 +192,7 @@ class Pelicula extends BaseController
           $imagenId = $imagenModel->insert([
             'imagen' => $imageNombre,
             'extension' => $ext,
-            'data' => 'pendiente',
+            'data' => json_encode(get_file_info('../public/uploads/peliculas/' . $imageNombre)),
           ]);
 
           $peliculaImagenModel = new PeliculaImagenModel();

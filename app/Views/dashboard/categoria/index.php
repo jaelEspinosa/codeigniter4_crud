@@ -9,7 +9,7 @@
   
 
   <a class="btn btn-primary m-5" href="/dashboard/categoria/new">Crear</a>
-  <div class="tscroll border roundez shadow">
+  <div class="border roundez shadow">
   <table class="table table-striped-columns">
       <tr>
           <th>id</th>
@@ -34,10 +34,14 @@
             <?php endforeach ?> 
         </table>
     </div>
-      <div>
-          <a class="btn bnt-sm btn-outline-primary mt-4" href="<?=base_url()?>dashboard/pelicula">peliculas</a>
-          <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/etiqueta">Etiquetas</a>
-      </div>
-  </div>   
-   
+    <div>
+        <a class="btn bnt-sm btn-outline-primary mt-4" href="<?=base_url()?>dashboard/pelicula">peliculas</a>
+        <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/etiqueta">Etiquetas</a>
+    </div>
+    <div class="border shadow rounded mt-5 p-2">
+         <h5>Pag.</h5>
+         <?= $pager->links() ?>
+    </div>
+</div>   
+
    <?= $this->endSection() ?>

@@ -12,7 +12,7 @@
     <p><?php echo $nombreVariableVista ?></p>
 
     <a class="btn btn-primary m-5" href="/dashboard/pelicula/new">Crear</a>
-    <div class="tscroll border rounded shadow">
+    <div class="border rounded shadow">
 
         <table class="table table-striped-columns">
             <tr>
@@ -53,6 +53,12 @@
         <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/categoria">Categorias</a>
         <a class="btn bnt-sm btn-outline-primary mt-4" href="<?= base_url() ?>dashboard/etiqueta">Etiquetas</a>
     </div>
+    <div class="border shadow rounded mt-5 p-2">
+         <h5>Pag.</h5>
+         <?= $pager->links() ?>
+    </div>
+  
+    
 </div>
 
 
