@@ -39,6 +39,7 @@ $routes->group('dashboard', function($routes){
     $routes->get('pelicula/(:num)/download','Dashboard\Pelicula::download_img/$1',['as' => 'pelicula.imagen_download']); 
     
     $routes->get('pelicula/etiqueta/(:num)','Dashboard\Pelicula::etiquetas/$1',['as' => 'pelicula.etiquetas']); 
+   
     $routes->post('pelicula/etiqueta/(:num)','Dashboard\Pelicula::etiquetas_post/$1',['as' => 'pelicula.etiquetas']); 
 
     $routes->post('pelicula/(:num)/etiqueta/(:num)/delete','Dashboard\Pelicula::etiqueta_delete/$1/$2',['as' => 'pelicula.etiqueta_delete']); 

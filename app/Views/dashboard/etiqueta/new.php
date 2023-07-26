@@ -4,8 +4,8 @@
 
 <?= $this->extend('Layouts/dashboard') ?>
 <?= $this->section('contenido') ?>
-<div class="container">
-   <h2 class="text-center">Nueva Pelicula</h2>
+
+   <h2 class="text-center">Nueva Etiqueta</h2>
 
     <form  class="row border mt-5 m-2 p-5 shadow rounded" action="/dashboard/etiqueta/create" method="post">
         
@@ -16,7 +16,7 @@
             </div>
         <?php endif ?>
     </form>
-    </div>
+   
 
 
 <?= $this->endSection() ?>

@@ -2,7 +2,7 @@
 
 <?= $this->extend('Layouts/dashboard') ?>
 <?= $this->section('contenido') ?>
-<div class="container">
+
     <h1 class="text-center">Actualizar Pelicula</h1>
 
     <form class="row border mt-5 m-2 p-5 shadow rounded" action="/dashboard/etiqueta/update/<?= $etiqueta['id'] ?>" method="post">
@@ -14,7 +14,7 @@
             </div>
         <?php endif ?>
     </form>
-</div>
+
 
 
 <?= $this->endSection() ?>

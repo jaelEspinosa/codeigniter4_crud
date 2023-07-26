@@ -1,6 +1,6 @@
 <?= $this->extend('Layouts/dashboard') ?>
 <?= $this->section('contenido') ?>
-<div class="container">
+
    <h2 class="text-center">Etiquetas</h2>
 
   <form class="row border mt-5 m-2 p-5 shadow rounded"  method="post">
@@ -73,7 +73,7 @@
     </script>
    
 
-</div>
+
 
     <?= $this->endSection() ?>
 

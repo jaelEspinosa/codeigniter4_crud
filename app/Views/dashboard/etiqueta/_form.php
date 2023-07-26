@@ -24,7 +24,7 @@
 
    
     
-    <div class="col-md-6 row mx-1">
+    <div class="col-md-6 row mx-1 mt-4">
         <button class="btn btn-primary col-4"><?= $oc ?></button>
         <div class="col-4"></div>
         <a href="<?php echo base_url().'dashboard/etiqueta'?>" class="btn btn-primary col-4">volver</a>

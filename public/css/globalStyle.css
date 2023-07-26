@@ -76,28 +76,26 @@
     font-weight:bold;
 }
 
-.pagination{
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    
-    padding: 2px;
-    font-size: 24px;
+.desk-solo{
+    display:none;
+}
+.movil-solo{
+    display:initial;
 }
 
-.pagination li a{
 
-    color: rgb(91, 94, 95);
-    text-decoration: none;
 
+@media(min-width:991px){
+    .desk-solo{
+        display:initial;
+    }
+    .movil-solo{
+        display:none;
+    }
 }
 
-.pagination li a span{
-    
-    color: rgb(91, 94, 95);
+.list{
     text-decoration: none;
-    font-size: 18px!important;
-
+    font-weight: bold;
+    font-size: 18px;
 }

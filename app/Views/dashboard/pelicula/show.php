@@ -6,7 +6,7 @@
 <?= $this->extend('Layouts/dashboard') ?>
 <?= $this->section('contenido') ?>
 
-<div class="container">
+
     
 <div class="d-flex align-items-center justify-content-between ">
         <h1><?= $pelicula['titulo'] ?></h1>
@@ -63,7 +63,7 @@
             
        </div>
    
-</div>
+
 
 
 <?= $this->endSection() ?>
