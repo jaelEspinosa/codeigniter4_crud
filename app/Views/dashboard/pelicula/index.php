@@ -18,7 +18,8 @@
             <th>Titulo</th>
             <th>Descripción</th>
             <th>Categoria</th>
-            <th>Opciones</th>
+            <th>Acc</th>
+            <th>Acc</th>
         </tr>
         <?php foreach ($peliculas as $key => $value) : ?>
             <tr>
@@ -33,20 +34,21 @@
                     }
 
                     ?></td>
-                <td class="d-flex gap-2 flex-column align-items-center justify-content-around">
-                    <div class="d-flex gap-2">
+                <td style="width: 100px;">   
+                <div class="d-flex align-items-center gap-1">              
                         <a class="btn btn-sm btn-success" href="/dashboard/pelicula/show/<?= $value['id'] ?>"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-sm btn-primary" href="/dashboard/pelicula/edit/<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-warning" href="<?= route_to('pelicula.etiquetas', $value['id']) ?>"><i class="fa fa-tag"></i></a>    
                     </div>
-                    <div class="d-flex gap-2">
-                        <a class="btn btn-sm btn-warning" href="<?= route_to('pelicula.etiquetas', $value['id']) ?>"><i class="fa fa-tag"></i></a>
-    
+                </td>                 
+                <td style="width: 100px;">
+                    <div class="d-flex align-items-center gap-1">
+                        <a class="btn btn-sm btn-primary" href="/dashboard/pelicula/edit/<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
                         <form action="/dashboard/pelicula/delete/<?= $value['id'] ?>" method="post">
                             <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        </form>
+                        </form> 
                     </div>
-
                 </td>
+                
             </tr>
         <?php endforeach ?>
     </table>

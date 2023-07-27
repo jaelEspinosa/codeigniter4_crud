@@ -20,9 +20,9 @@
 
 <body>
   
-    <div class="container mt-5">
+    <div class="container mt-3">
     <h2 class="text-secondary">Admin<span class="text-primary">Panel</span></h2>
-        <div class="mx-5 mt-5 d-flex align-items-center justify-content-around">
+        <div class="mx-5 mt-2 d-flex align-items-center justify-content-around">
           
 
             <nav class="navbar navbar-expand-lg ">
