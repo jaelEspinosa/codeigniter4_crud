@@ -9,7 +9,7 @@
 
 <p><?php echo $nombreVariableVista ?></p>
 
-<a class="btn btn-primary m-5" href="/dashboard/etiqueta/new">Crear</a>
+<a class="btn btn-primary mx-3 my-4" href="/dashboard/etiqueta/new"><i class="fa fa-add"></i></a><span class="span">Nueva etiqueta</span>
 <div class="border rounded shadow">
 
     <table class="table table-striped-columns">

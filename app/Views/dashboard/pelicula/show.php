@@ -14,7 +14,7 @@
     </div>
 
     <p><?= $pelicula['description'] ?></p>
-    <h3>Imágenes:</h3>
+    <h3>Galería:</h3>
     <br>
     <div class="tscroll shadow border rounded row">
         <?php foreach ($images as $i):?>

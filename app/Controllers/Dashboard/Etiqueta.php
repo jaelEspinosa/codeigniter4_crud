@@ -65,7 +65,7 @@ class Etiqueta extends BaseController
       return redirect()->back()->withInput();
 
     }
-   return redirect()->to('/dashboard/etiqueta')->with('Mensaje','Registro creado correctamente');
+   return redirect()->to('/dashboard/etiqueta')->with('mensaje','Registro creado correctamente');
   }
 
 
@@ -100,7 +100,7 @@ class Etiqueta extends BaseController
     }
 
 
-    return redirect()->to('/dashboard/etiqueta')->with('Mensaje','Registro actualizado correctamente');
+    return redirect()->to('/dashboard/etiqueta')->with('mensaje','Registro actualizado correctamente');
   }
 
 

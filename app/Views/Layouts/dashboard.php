@@ -20,7 +20,8 @@
 
 <body>
   
-    <div class="container">
+    <div class="container mt-5">
+    <h2 class="text-secondary">Admin<span class="text-primary">Panel</span></h2>
         <div class="mx-5 mt-5 d-flex align-items-center justify-content-around">
           
 
@@ -30,16 +31,16 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#my-navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse" id="my-navbar">
+        <div class="collapse navbar-collapse menu-movil" id="my-navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="<?= base_url()?>/dashboard/pelicula" class="nav-link">Películas</a>
+                    <a href="<?= base_url()?>/dashboard/pelicula" class="nav-link <?= (uri_string() === 'dashboard/pelicula') ? 'active activa' : '' ?>">Películas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url()?>/dashboard/categoria" class="nav-link">Categorias</a>
+                    <a href="<?= base_url()?>/dashboard/categoria" class="nav-link <?= (uri_string() === 'dashboard/categoria') ? 'active activa' : '' ?>">Categorias</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url()?>/dashboard/etiqueta" class="nav-link">Etiquetas</a>
+                    <a href="<?= base_url()?>/dashboard/etiqueta" class="nav-link <?= (uri_string() === 'dashboard/etiqueta') ? 'active activa' : '' ?>">Etiquetas</a>
                 </li>
                 <li class="nav-item">
                   <a class="movil-solo" href="<?= base_url() . 'logout' ?>">
@@ -59,7 +60,7 @@
         <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i> Logout
     </a>
 </div>
-<h2 class="text-secondary">Admin<span class="text-primary">Panel</span></h2>
+
 <div class="border shadow-lg mb-5"></div>
 
 <?php if (session('Mensaje')) : ?>

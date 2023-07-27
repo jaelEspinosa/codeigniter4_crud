@@ -7,7 +7,7 @@
 
 
 
-    <a class="btn btn-primary m-5" href="/dashboard/categoria/new">Crear</a>
+    <a class="btn btn-primary mx-3 my-4" href="/dashboard/categoria/new"><i class="fa fa-add"></i></a><span class="span">Nueva categoria</span>
     <div class="border roundez shadow">
         <table class="table table-striped-columns">
             <tr>
